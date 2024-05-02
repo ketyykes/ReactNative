@@ -1,79 +1,52 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+1. 用 ReactNative 建立基礎 APP (ReactNative-Cli) 4hr
+2. 下方 APP tab 切換頁面 2hr
+3. app 選單點擊打開、收起 5hr(未完成)
+4. 串接一組列表資料 api，並可瀏覽 1.5hr
+5. 程式架構盡可能做到你最滿意的方式並於 readme 說明 2hr
 
-# Getting Started
+程式架構
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+建立一個資料夾叫做 src 主要是用來放置專案的原始碼，以下為資料夾的樹狀結構圖
 
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
 ```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+├── App.tsx
+├── assets
+├── components
+│   └── PostsList.tsx
+├── navigation
+│   └── NavigationContainer.tsx
+├── networking
+│   └── api.ts
+├── screens
+│   ├── HomeScreen.tsx
+│   └── SettingsScreen.tsx
+├── services
+├── types
+│   └── postTypes.ts
+└── utils
 ```
+針對每個資料夾和檔案簡單說明如下
 
-### For iOS
+- App.tsx
+  這是整個應用程式的入口點。
+- assets
+  存放靜態資源如圖片、字體或其他需要的資源文件。
+- components
+  存放可重複使用的元件
+- navigation
+  處理應用程式的導航結構，例如[https://reactnavigation.org/docs/bottom-tab-navigator](https://reactnavigation.org/docs/stack-navigator)
+- networking
+  管理與網路相關的操作，例如 API 呼叫，`api.ts` 可能包含各種 API 請求的函式。
+- screens
+  存放應用程式的各個畫面。例如：
+  - HomeScreen.tsx：主頁畫面。
+  - SettingsScreen.tsx：設定頁面畫面。
+- services  
+  存放應用程式所需的背景服務，例如資料同步、認證服務等。
+- types  
+  存放 TypeScript 的類型定義文件，如 `postTypes.ts` 包含與文章相關的類型定義。
+- utils
+  包含各種工具函式，如時間格式化、資料處理等通用功能。
 
-```bash
-# using npm
-npm run ios
+另外可能會使用 colocation 的概念，如果對於某些 component 只有該畫面會用到的話，我會建立一個該畫面的資料夾例如 HomeScreen 的資料夾名稱，其底下會有 component 資料夾，而這個資料夾的 component 只有 HomeScreen 頁面使用，因此最外層的 component 是共用的 component 也就是其他的畫面也會使用到，同理 type 的部分會希望將共用的 type 放在最外層的資料夾。
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
