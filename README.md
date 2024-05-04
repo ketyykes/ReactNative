@@ -1,9 +1,3 @@
-1. 用 ReactNative 建立基礎 APP (ReactNative-Cli) 4hr
-2. 下方 APP tab 切換頁面 2hr
-3. app 選單點擊打開、收起 5hr(未完成)
-4. 串接一組列表資料 api，並可瀏覽 1.5hr
-5. 程式架構盡可能做到你最滿意的方式並於 readme 說明 2hr
-
 程式架構
 
 建立一個資料夾叫做 src 主要是用來放置專案的原始碼，以下為資料夾的樹狀結構圖
