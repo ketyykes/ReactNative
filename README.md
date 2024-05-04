@@ -42,5 +42,3 @@
 - utils
   包含各種工具函式，如時間格式化、資料處理等通用功能。
 
-另外可能會使用 colocation 的概念，如果對於某些 component 只有該畫面會用到的話，我會建立一個該畫面的資料夾例如 HomeScreen 的資料夾名稱，其底下會有 component 資料夾，而這個資料夾的 component 只有 HomeScreen 頁面使用，因此最外層的 component 是共用的 component 也就是其他的畫面也會使用到，同理 type 的部分會希望將共用的 type 放在最外層的資料夾。
-
